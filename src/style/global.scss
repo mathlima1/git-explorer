@@ -1,7 +1,9 @@
 * {
     margin: 0;
     padding: 0;
-    h1{
-        font-size: 55px;
-    }
+    box-sizing: border-box;
+}
+body{
+    font: 16px "Helvetica Neuw", Arial, sans-serif;
+    color: #121214;
 }
