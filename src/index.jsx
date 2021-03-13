@@ -1,5 +1,4 @@
-import React from 'react';
-import App from './App';
-function Wrapper() {
-    return <App />
-}
+
+import { render } from 'react-dom';
+
+render(<h1>Teste</h1>, document.getElementById('root'));
