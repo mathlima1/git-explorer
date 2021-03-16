@@ -1,0 +1,16 @@
+@media screen and (max-width: 768px){
+    section.repository-list{
+        .repository-list-header{
+            min-height: 40vh;
+            border-radius: 0;
+            h1{
+                font-size: 30px;
+            }
+        }
+        ul{
+            grid-template-columns: auto;
+            padding: 5px 15px;
+        }
+        margin: 0;
+    }
+}

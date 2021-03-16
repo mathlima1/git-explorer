@@ -1,20 +1,26 @@
 import { RepositoryItem } from "./RepositoryItem";
+import "../style/repository.scss"
+import { useState, useEffect } from "react";
 
 export function RepositoryList() {
-    const repository = {
-        name: "Unform",
-        description: "Descrição do repositorio",
-        link: "https://github.com"
-    }
+    //https://api.github.com/users/mathlima1/repos
+    const [repositories, setRepositories] = useState([])
+
+    useEffect(() => {
+        fetch('https://api.github.com/users/mathlima1/repos')
+            .then(response => response.json())
+            .then(data => setRepositories(data))
+    }, [])
 
     return (
         <section className="repository-list">
-            <h1>Listagem de repositorios</h1>
+            <div className="repository-list-header">
+                <h1>Listagem de repositorios</h1>
+            </div>
             <ul>
-                <RepositoryItem repository={repository} />
-                <RepositoryItem repository={repository} />
-                <RepositoryItem repository={repository} />
-
+                {repositories.map(repository => {
+                    return (<RepositoryItem key={repository.name} repository={repository} />)
+                })}
             </ul>
         </section>
     )
